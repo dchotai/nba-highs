@@ -2,6 +2,7 @@
 import requests
 from pandas import DataFrame
 from datetime import datetime, timedelta
+from time import strftime
 
 """
 Scrapes API for season highs of player and determines if season
@@ -9,7 +10,7 @@ high stat occurred in today's game. If so, returns tweet.
 """
 
 today = datetime.today().date()
-today = "{}-{}-{}".format(today.year, today.month, today.day) 
+today = today.strftime('%Y-%m-%d')
 
 # Header necessary for accessing API without a browser
 h = {'user-agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) '
